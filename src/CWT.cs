@@ -38,8 +38,7 @@ namespace CWTExample
              * This is your DataClass, it is not static because it is being instanced by your CWT when it gets a key.
              *  Store your fields here.
              */
-            public int sLeaserLength;
-            public int NewSpriteIndex;
+            public int newSpriteIndex;
         }
     }
 }

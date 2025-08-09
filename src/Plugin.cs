@@ -48,9 +48,7 @@ namespace CWTExample
                 if (IsInit) return;
 
                 Hooks.Hooks.PatchHooks();
-                /*
-                 * See the `CWT` and `Hooks` class for usage and how a ConditionalWeakTable works
-                 */
+                //See the `CWT` and `Hooks` class for usage and how a ConditionalWeakTable works
 
                 IsInit = true;
             }
@@ -58,7 +56,6 @@ namespace CWTExample
             {
                 Logger.LogError($"{MOD_NAME} failed to load!");
                 Logger.LogError(ex);
-                throw;
             }
         }
 
