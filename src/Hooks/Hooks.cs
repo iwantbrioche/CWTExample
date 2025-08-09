@@ -22,7 +22,7 @@ namespace CWTExample.Hooks
 
                 Array.Resize(ref sLeaser.sprites, sLeaser.sprites.Length + 1); // Resize the sLeaser with its length + 1
 
-                sLeaser.sprites[data.newSpriteIndex] = new("LizardScaleA6"); // Create the new sprite with our newSpriteIndex as it's index
+                sLeaser.sprites[data.newSpriteIndex] = new("LizardScaleA6"); // Create the new sprite with newSpriteIndex as it's index
 
 
                 self.AddToContainer(sLeaser, rCam, null); // Call AddToContainer so the new sprite gets added to the container
