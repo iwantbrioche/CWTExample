@@ -23,24 +23,22 @@ using System.Runtime.CompilerServices;
 [module: UnverifiableCode]
 [assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]
 
-namespace Template
+namespace CWTExample
 {
     [BepInPlugin(MOD_ID, MOD_NAME, MOD_VER)]
-    public class TestingMod : BaseUnityPlugin
+    public class CWTExample : BaseUnityPlugin
     {
-        public const string MOD_ID = "id.name";
-        public const string MOD_NAME = "Name";
+        public const string MOD_ID = "iwantbread.cwtexample";
+        public const string MOD_NAME = "CWTExample";
         public const string MOD_VER = "1.0";
         public static new ManualLogSource Logger { get; private set; }
         private void OnEnable()
         {
             On.RainWorld.OnModsInit += RainWorld_OnModsInit;
-            On.RainWorld.PostModsInit += RainWorld_PostModsInit;
             Logger = base.Logger;
         }
 
         private bool IsInit;
-        private bool PostIsInit;
 
         private void RainWorld_OnModsInit(On.RainWorld.orig_OnModsInit orig, RainWorld self)
         {
@@ -50,29 +48,15 @@ namespace Template
                 if (IsInit) return;
 
                 Hooks.Hooks.PatchHooks();
+                /*
+                 * See the `CWT` and `Hooks` class for usage and how a ConditionalWeakTable works
+                 */
 
                 IsInit = true;
             }
             catch (Exception ex)
             {
                 Logger.LogError($"{MOD_NAME} failed to load!");
-                Logger.LogError(ex);
-                throw;
-            }
-        }
-
-        private void RainWorld_PostModsInit(On.RainWorld.orig_PostModsInit orig, RainWorld self)
-        {
-            orig(self);
-            try
-            {
-                if (PostIsInit) return;
-
-                PostIsInit = true;
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError($"{MOD_NAME} PostModsInit failed to load!");
                 Logger.LogError(ex);
                 throw;
             }
