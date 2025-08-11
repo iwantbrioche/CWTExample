@@ -33,9 +33,9 @@ namespace CWTExample.Hooks
             orig(self, sLeaser, rCam, newContatiner);
             if (CWT.TryGetData(self, out var data))
             {
-                // This checks if the newSpriteIndex variable is 0 or less than the sLeaser.sprites.Length
+                // This checks if the newSpriteIndex variable is 0 or less than or equal to the sLeaser.sprites.Length
                 //  This is to prevent the game trying to add your new sprite to the container if it hasn't been added to the sprite leaser yet
-                if (data.newSpriteIndex == 0 || sLeaser.sprites.Length < data.newSpriteIndex) return;
+                if (data.newSpriteIndex == 0 || sLeaser.sprites.Length <= data.newSpriteIndex) return;
 
                 newContatiner ??= rCam.ReturnFContainer("Midground");
 
