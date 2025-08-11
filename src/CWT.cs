@@ -9,11 +9,11 @@ namespace CWTExample
     public static class CWT
     {
         /*
-         * The ConditionalWeakTable is a powerful modding tool, it allows you to attach fields to an object dynamically.
+         * The ConditionalWeakTable is a powerful modding tool, it lets you attach fields to an object dynamically.
          *  This allows you to use custom fields and variables in hooks.
          *  A CWT works by taking in an instance of a class as a key, which will then return an instance of a data class that holds your fields.
          *  It's very similar to Dictionaries, and you could use a Dictionary instead of a CWT.
-         *  However what seperates a ConditionalWeakTable from a Dictionary is in the name, "WeakTable"
+         *  However what seperates a ConditionalWeakTable from a Dictionary is in the name, "Weak"
          *  Keys in ConditionalWeakTables are weakly referenced, meaning they can be garbage collected when not in use.
          *  Dictionary keys are strongly referenced, which means if they are not in use it can cause a memory leak.
          */
